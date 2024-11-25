@@ -36,7 +36,8 @@ public class Barco {
     public void setLotacao(int lotacao) {
         this.lotacao = lotacao;
     }
-
+    
+    @Override
     public String toString() {
         return "Barco [codigo=" + codigo + ", nome=" + nome + ", lotacao=" + lotacao + "]";
     }
