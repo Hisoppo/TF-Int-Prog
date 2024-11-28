@@ -48,7 +48,7 @@ public class CadastroBarcos {
         nome = sc.nextLine();
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
-                return barcos[i];
+                System.out.println(barcos[i]);
             }
         }
         return null;
