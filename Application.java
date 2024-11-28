@@ -16,12 +16,12 @@ import java.util.Scanner;
 public class Application {
    public static void main(String[] args) {
       CadastroBarcos cadastroBarcos = new CadastroBarcos();
-      Passeio passeio = new Passeio(null, 0);
+      
       
       Scanner sc = new Scanner(System.in); 
       Barco barco = new Barco(0, "", 0);
       Passageiro passageiro = new Passageiro("", 0, "");
-      
+      Passeio passeio = new Passeio(barco, 01);
       
       int seletor = 0;
 

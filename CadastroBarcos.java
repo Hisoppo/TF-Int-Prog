@@ -44,6 +44,8 @@ public class CadastroBarcos {
     }
 
     public Barco buscaBarcoNome(String nome) { // Busca um barco pelo nome
+        System.out.println("Digite o nome do barco para localiza-lo");
+        nome = sc.nextLine();
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
                 return barcos[i];
@@ -53,6 +55,8 @@ public class CadastroBarcos {
     }
 
     public boolean removeBarco(String nome) { // Remove um barco pelo nome
+        System.out.println("Digite o nome do barco para remove-lo");
+        nome = sc.nextLine();
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
                 for (int j = i; j < numBarcos - 1; j++) {
@@ -70,13 +74,5 @@ public class CadastroBarcos {
             System.out.println(barcos[i]);
         }
     }
-
-    public static void main(String[] args) {
-        System.out.println("adicione um barco");
-        CadastroBarcos cb = new CadastroBarcos();
-        Barco barco = new Barco(0, null, 0);
-        cb.adicionaBarco(barco);
-    }
-
     
 }
