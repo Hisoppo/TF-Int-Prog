@@ -38,7 +38,12 @@ public class Barco {
     }
     
 
+    @Override
     public String toString() {
-        return "Barco [codigo=" + codigo + ", nome=" + nome + ", lotacao=" + lotacao + "]";
+        return "Barco {" +
+               "codigo='" + codigo + '\'' +
+               ", nome='" + nome + '\'' +
+               ", lotacao=" + lotacao +
+               '}';
     }
 }
