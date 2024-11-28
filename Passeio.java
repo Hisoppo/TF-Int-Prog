@@ -64,8 +64,8 @@ public class Passeio {
 
    public int buscaPasProfissao(String profissao) {
       int cont = 0;
-      for (int i = 0; i < passageiros.length; i++) {
-         if (passageiros[i] != null && passageiros[i].getProfissao().equals(profissao)) {
+      for (Passageiro passageiro : passageiros) {
+         if (passageiro != null && passageiro.getProfissao().equals(profissao)) {
             cont++;
          }
       }
@@ -73,7 +73,13 @@ public class Passeio {
    }
 
    public double buscaValorPasseio() {
-      return valorBilhete * passageiros.length;
+      double total = 0;
+      for (Passageiro passageiro : passageiros) {
+         if (passageiro != null) {
+            total += valorBilhete;
+         }
+      }
+      return total;
    }
 
 }
