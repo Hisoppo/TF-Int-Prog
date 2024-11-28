@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 // O gerenciamento dos barcos deve ser feito na classe CadastroBarcos que também deve ser criada.
 // Nesta classe, serão armazenados os barcos que a empresa possui, que são objetos da classe Barco.
 // Crie um construtor que cria o cadastro (vetor de objetos) que pode armazenar até 10 barcos. Além
@@ -7,6 +10,7 @@
 // contém o nome do barco recebido), removeBarco (recebe o nome do barco, caso ele exista, remove
 // o barco do cadastro e retorna true se a remoção foi realizada ou false se a remoção não foi possível)
 // e mostraBarcos (mostra os dados dos objetos armazenados).
+
 public class CadastroBarcos {
     Barco[] barcos;
     int numBarcos = 0;
@@ -14,8 +18,23 @@ public class CadastroBarcos {
     public CadastroBarcos() {
         barcos = new Barco[10];
     }
-
-    public boolean adicionaBarco(Barco barco) {
+    Scanner sc = new Scanner(System.in);
+    
+    public boolean adicionaBarco() {
+        
+        System.out.print("Digite o código do barco: ");
+        int codigo = sc.nextInt();
+        sc.nextLine();
+        
+        System.out.print("Digite o nome do barco: ");
+        String nome = sc.nextLine();
+        
+        System.out.print("Digite a lotação do barco: ");
+        int lotacao = sc.nextInt();
+        sc.nextLine();
+        
+        Barco barco = new Barco(codigo, nome, lotacao);
+        
         if (numBarcos < 10) {
             barcos[numBarcos] = barco;
             numBarcos++;
@@ -24,7 +43,7 @@ public class CadastroBarcos {
         return false;
     }
 
-    public Barco buscaBarcoNome(String nome) {
+    public Barco buscaBarcoNome(String nome) { // Busca um barco pelo nome
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
                 return barcos[i];
@@ -33,7 +52,7 @@ public class CadastroBarcos {
         return null;
     }
 
-    public boolean removeBarco(String nome) {
+    public boolean removeBarco(String nome) { // Remove um barco pelo nome
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
                 for (int j = i; j < numBarcos - 1; j++) {
@@ -46,10 +65,17 @@ public class CadastroBarcos {
         return false;
     }
 
-    public void mostraBarcos() {
+    public void mostraBarcos() { // Mostra todos os barcos
         for (int i = 0; i < numBarcos; i++) {
             System.out.println(barcos[i]);
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("adicione um barco");
+        CadastroBarcos cb = new CadastroBarcos();
+        Barco barco = new Barco(0, null, 0);
+        cb.adicionaBarco(barco);
     }
 
     

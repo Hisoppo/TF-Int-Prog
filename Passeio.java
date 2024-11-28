@@ -25,6 +25,12 @@ public class Passeio {
       passageiros = new Passageiro[barco.getLotacao()];
    }
 
+   public void criaPasseio(Barco barco, double valorBilhete) {
+      this.barco = barco;
+      this.valorBilhete = valorBilhete;
+      passageiros = new Passageiro[barco.getLotacao()];
+   }
+
    public boolean adicionaPassageiro(Passageiro passageiro) {
       for (int i = 0; i < passageiros.length; i++) {
          if (passageiros[i] == null) {
@@ -49,9 +55,9 @@ public class Passeio {
       System.out.println("Barco: " + barco.getNome());
       System.out.println("Valor do bilhete: " + valorBilhete);
       System.out.println("Passageiros:");
-      for (int i = 0; i < passageiros.length; i++) {
-         if (passageiros[i] != null) {
-            System.out.println(passageiros[i]);
+      for (Passageiro passageiro : passageiros) {
+         if (passageiro != null) {
+               System.out.println(passageiro);
          }
       }
    }
