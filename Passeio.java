@@ -1,3 +1,4 @@
+
 // Os passeios serão organizados em uma classe Passeio que também deve ser criada e terá os
 // seguintes atributos: o barco que fará o passeio (objeto do tipo Barco), o valor do bilhete de
 // passagem (double) e o vetor de passageiros (vetor de objetos passageiros) em que serão
@@ -14,6 +15,8 @@
 // passageiros do passeio que possuem a profissão recebida como parâmetro) e buscaValorPasseio
 // (retorna o valor arrecadado pelo passeio que corresponde ao valor do bilhete de passagem
 // multiplicado pelo número de passageiros que o passeio terá).
+
+
 public class Passeio {
    Barco barco;
    double valorBilhete;
@@ -29,26 +32,30 @@ public class Passeio {
       this.barco = barco;
       this.valorBilhete = valorBilhete;
       passageiros = new Passageiro[barco.getLotacao()];
+      System.out.println("Passeio criado com o barco: " + barco.getNome() + " e valor do bilhete: " + valorBilhete);
    }
 
-   public boolean adicionaPassageiro(Passageiro passageiro) {
+   public void adicionaPassageiro(String nome, int idade, String profissao) {
+      Passageiro passageiro = new Passageiro(nome, idade, profissao);
       for (int i = 0; i < passageiros.length; i++) {
          if (passageiros[i] == null) {
             passageiros[i] = passageiro;
-            return true;
+            System.out.println("Passageiro adicionado: " + passageiro.getNome());
+            return;
          }
       }
-      return false;
+      System.out.println("Não foi possível adicionar o passageiro: " + passageiro.getNome());
    }
 
-   public boolean removePassageiro(String nome) {
+   public void removePassageiro(String nome) {
       for (int i = 0; i < passageiros.length; i++) {
-         if (passageiros[i].getNome().equals(nome)) {
+         if (passageiros[i] != null && passageiros[i].getNome().equals(nome)) {
             passageiros[i] = null;
-            return true;
+            System.out.println("Passageiro removido: " + nome);
+            return;
          }
       }
-      return false;
+      System.out.println("Passageiro não encontrado: " + nome);
    }
 
    public void mostraPasseio() {
@@ -57,29 +64,28 @@ public class Passeio {
       System.out.println("Passageiros:");
       for (Passageiro passageiro : passageiros) {
          if (passageiro != null) {
-               System.out.println(passageiro);
+            System.out.println(passageiro);
          }
       }
    }
 
-   public int buscaPasProfissao(String profissao) {
+   public void buscaPasProfissao(String profissao) {
       int cont = 0;
       for (Passageiro passageiro : passageiros) {
          if (passageiro != null && passageiro.getProfissao().equals(profissao)) {
             cont++;
          }
       }
-      return cont;
+      System.out.println("Quantidade de passageiros com a profissão " + profissao + ": " + cont);
    }
 
-   public double buscaValorPasseio() {
+   public void buscaValorPasseio() {
       double total = 0;
       for (Passageiro passageiro : passageiros) {
          if (passageiro != null) {
             total += valorBilhete;
          }
       }
-      return total;
+      System.out.println("Valor total arrecadado pelo passeio: " + total);
    }
-
 }
