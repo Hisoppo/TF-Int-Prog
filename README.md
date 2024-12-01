@@ -38,13 +38,13 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
     Materiais didáticos da disciplina: Exemplos e exercícios fornecidos pela Profª Eduarda Monteiro.
 
 
-##Lições Aprendidas
-
-    + Modelagem de Classes: Aprendemos a importância de planejar bem as classes, seus atributos e métodos para que se comuniquem de forma eficiente.
-    + Encapsulamento: A prática de proteger os atributos das classes com métodos de acesso (getters e setters) foi fundamental para manter a integridade dos  dados.
-    + Manipulação de Vetores: O uso de vetores para gerenciar dados (barcos e passageiros) foi essencial para o funcionamento do sistema.
-    + Controle de Fluxo: A implementação de menus interativos ajudou a consolidar o conhecimento sobre controle de fluxo e validação de entrada.
-    
+<h2>Lições Aprendidas</h2>
+<ul>
+    <li>Modelagem de Classes: Aprendemos a importância de planejar bem as classes, seus atributos e métodos para que se comuniquem de forma eficiente.</li>
+    <li>Encapsulamento: A prática de proteger os atributos das classes com métodos de acesso (getters e setters) foi fundamental para manter a integridade dos  dados</li>.
+    <li>Manipulação de Vetores: O uso de vetores para gerenciar dados (barcos e passageiros) foi essencial para o funcionamento do sistema.</li>
+    <li>Controle de Fluxo: A implementação de menus interativos ajudou a consolidar o conhecimento sobre controle de fluxo e validação de entrada.</li>
+</ul>   
 <h2>Dificuldades Encontradas e Soluções</h2>
     
 <h3>Validação de Dados</h3>
