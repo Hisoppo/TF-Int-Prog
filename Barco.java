@@ -14,7 +14,7 @@ public class Barco {
 
     public int getCodigo() {
         return codigo;
-    }   
+    }
 
     public String getNome() {
         return nome;
