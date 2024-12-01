@@ -76,7 +76,7 @@ public class CadastroBarcos {
     public Barco buscaBarcoNome(String nome) { // Busca um barco pelo nome
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
-                return barcos[i];
+                System.out.println (barcos[i]);
             }
         }
         return null;
