@@ -13,11 +13,13 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
         Inserção e remoção de passageiros do passeio.
         Cálculo de arrecadação total com base nos bilhetes vendidos.
         Consulta da quantidade de passageiros com uma profissão específica.</li>
-    <li>Interface com o usuário: Menu interativo com opções para cada funcionalidade.
-    Estrutura do Código</li>
+    <li>Interface com o usuário: Menu interativo com opções para cada funcionalidade.</li>
 </ol>
 
-<h2>O sistema foi implementado em Java com as seguintes classes principais:</h2>
+
+<h2>Estrutura do Código</h2>
+
+    <h3>O sistema foi implementado em Java com as seguintes classes principais:</h2>
 
 <ol>
     <li>Passageiro: Representa os dados de um passageiro (nome, idade e profissão).</li>
@@ -27,15 +29,6 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
     <li>Application: Contém o main e implementa a interface de interação com o usuário.</li>
 </ol>
 
-<h3>Fontes de Consulta/Ajuda</h3>
-
-    Documentação Oficial do Java: Para métodos e estruturas básicas da linguagem.
-    https://docs.oracle.com/javase/
-    W3Schools Java: Para exemplos e referência rápida de sintaxe.
-    https://www.w3schools.com/java/
-    Stack Overflow: Soluções para dúvidas específicas durante a implementação.
-    https://stackoverflow.com/
-    Materiais didáticos da disciplina: Exemplos e exercícios fornecidos pela Profª Eduarda Monteiro.
 
 
 <h2>Lições Aprendidas</h2>
@@ -58,10 +51,11 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
     <li>Desafio: Controlar o vínculo entre passeios e barcos de maneira eficaz.</li>
     <li>Solução: Utilização de referências de objetos para estabelecer relações diretas.</li>
 </ul>
-<h3>Menu Interativo</h3>
+<h3>Manipulação de arraylist<h3>
 <ul>
-    <li>Desafio: Implementar um menu que permitisse execução contínua até a saída explícita.</li>
-    <li>Solução: Uso de loops do-while com validação de entradas para manter o sistema ativo.</li>
+    <li>Desafio: Se localizou especificamente no metodo criarPasseio</li>
+    <li>Solução: Reorganizar a lógica de forma manual(papel e caneta), com o objetivo de compreender como são utilizadas as classes que se ligam a ele. </li>
+
 </ul>
 
 
