@@ -18,8 +18,8 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
 
 
 <h2>Estrutura do Código</h2>
-
-    <h3>O sistema foi implementado em Java com as seguintes classes principais:</h2>
+<h3>O sistema foi implementado em Java com as seguintes classes principais:</h3>
+    
 
 <ol>
     <li>Passageiro: Representa os dados de um passageiro (nome, idade e profissão).</li>
@@ -34,7 +34,7 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
 <h2>Lições Aprendidas</h2>
 <ul>
     <li>Modelagem de Classes: Aprendemos a importância de planejar bem as classes, seus atributos e métodos para que se comuniquem de forma eficiente.</li>
-    <li>Encapsulamento: A prática de proteger os atributos das classes com métodos de acesso (getters e setters) foi fundamental para manter a integridade dos  dados</li>.
+    <li>Encapsulamento: A prática de proteger os atributos das classes com métodos de acesso (getters e setters) foi fundamental para manter a integridade dos  dados.</li>
     <li>Manipulação de Vetores: O uso de vetores para gerenciar dados (barcos e passageiros) foi essencial para o funcionamento do sistema.</li>
     <li>Controle de Fluxo: A implementação de menus interativos ajudou a consolidar o conhecimento sobre controle de fluxo e validação de entrada.</li>
 </ul>   
