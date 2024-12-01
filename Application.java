@@ -22,6 +22,7 @@ public class Application {
       Barco barco = new Barco(0, "", 0);
       Passageiro passageiro = new Passageiro("", 0, "");
       Passeio passeio = new Passeio(barco, 01);
+      String nome = "";
       
       int seletor = 0;
 
@@ -57,14 +58,13 @@ public class Application {
                cadastroBarcos.buscaBarcoNome(barco.getNome());
                break;
             case 5:
-               passeio.criaPasseio(barco, seletor);
+               passeio.criaPasseio(cadastroBarcos);
                break;
             case 6:
                passeio.mostraPasseio();
                break;
             case 7:
-               passeio.adicionaPassageiro(passageiro);
-               break;
+               passeio.adicionaPassageiro(passageiro, barco.getNome());
             case 8:
                passeio.removePassageiro(passageiro.getNome());
                break;

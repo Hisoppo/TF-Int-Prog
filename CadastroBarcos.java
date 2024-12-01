@@ -74,5 +74,4 @@ public class CadastroBarcos {
             System.out.println(barcos[i]);
         }
     }
-    
 }
