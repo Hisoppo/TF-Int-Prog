@@ -76,7 +76,9 @@ public class CadastroBarcos {
     public Barco buscaBarcoNome(String nome) { // Busca um barco pelo nome
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
-                System.out.println (barcos[i]);
+                System.out.println(barcos[i]);
+                return barcos[i]; 
+                
             }
         }
         return null;
@@ -88,6 +90,7 @@ public class CadastroBarcos {
                 for (int j = i; j < numBarcos - 1; j++) {
                     barcos[j] = barcos[j + 1];
                 }
+                 
                 numBarcos--;
                 return true;
             }
