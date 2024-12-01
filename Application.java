@@ -32,11 +32,19 @@ public class Application {
             case 1:
                cadastroBarcos.adicionaBarco();
                break;
-            case 2:
-               System.out.println("Informe o nome do barco a ser removido:");
-               String barcoRemover = sc.nextLine();
-               cadastroBarcos.removeBarco(barcoRemover);
-               break;
+               case 2:
+
+            System.out.println("Informe o nome do barco a ser removido:");
+            String barcoRemover = sc.nextLine();
+            boolean barcoRemovido = cadastroBarcos.removeBarco(barcoRemover);
+            if (barcoRemovido) {
+               
+               passeios.removeIf(passeio -> passeio.getBarco().getNome().equals(barcoRemover));
+               System.out.println("Barco e passeios associados removidos com sucesso.");
+            } else {
+               System.out.println("Barco não encontrado.");
+            }
+            break;
             case 3:
                cadastroBarcos.mostraBarcos();
                break;
