@@ -77,6 +77,7 @@ Trabalho final da disciplina de Int. a Programação na PUCRS 2024/2
     Materiais didáticos da disciplina: Exemplos e exercícios fornecidos pela Profª Eduarda Monteiro.
 
 <h2>Autores</h2>
+
 Nome: André Luiz Goi Quatrin 
 
 Número de Matrícula: 24201023-9

@@ -28,15 +28,23 @@ public class Application {
          seletor = sc.nextInt();
          sc.nextLine();
 
-         switch (seletor) {
+         switch (seletor) { 
             case 1:
                cadastroBarcos.adicionaBarco();
                break;
-            case 2:
-               System.out.println("Informe o nome do barco a ser removido:");
-               String barcoRemover = sc.nextLine();
-               cadastroBarcos.removeBarco(barcoRemover);
-               break;
+               case 2:
+
+            System.out.println("Informe o nome do barco a ser removido:");
+            String barcoRemover = sc.nextLine();
+            boolean barcoRemovido = cadastroBarcos.removeBarco(barcoRemover);
+            if (barcoRemovido) {
+               
+               passeios.removeIf(passeio -> passeio.getBarco().getNome().equals(barcoRemover));
+               System.out.println("Barco e passeios associados removidos com sucesso.");
+            } else {
+               System.out.println("Barco não encontrado.");
+            }
+            break;
             case 3:
                cadastroBarcos.mostraBarcos();
                break;
@@ -61,7 +69,7 @@ public class Application {
             case 7:
                System.out.println("Selecione o passeio para adicionar passageiro (número):");
                for (int i = 0; i < passeios.size(); i++) {
-                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).getBarco().getNome());
+                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).getBarco().getNome());  
                }
                int passeioSelecionado = sc.nextInt() - 1;
                sc.nextLine();
