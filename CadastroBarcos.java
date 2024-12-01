@@ -12,14 +12,44 @@ import java.util.Scanner;
 // e mostraBarcos (mostra os dados dos objetos armazenados).
 
 public class CadastroBarcos {
-    Barco[] barcos;
-    int numBarcos = 0;
-
+    private Barco[] barcos;
+    private int numBarcos = 0;
+    private Scanner sc = new Scanner(System.in);
     public CadastroBarcos() {
         barcos = new Barco[10];
     }
-    Scanner sc = new Scanner(System.in);
     
+    
+
+
+    public Barco[] getBarcos() {
+        return barcos;
+    }
+
+
+
+
+    public void setBarcos(Barco[] barcos) {
+        this.barcos = barcos;
+    }
+
+
+
+
+    public int getNumBarcos() {
+        return numBarcos;
+    }
+
+
+
+
+    public void setNumBarcos(int numBarcos) {
+        this.numBarcos = numBarcos;
+    }
+
+
+
+
     public boolean adicionaBarco() {
         
         System.out.print("Digite o código do barco: ");
@@ -44,19 +74,15 @@ public class CadastroBarcos {
     }
 
     public Barco buscaBarcoNome(String nome) { // Busca um barco pelo nome
-        System.out.println("Digite o nome do barco para localiza-lo");
-        nome = sc.nextLine();
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
-                System.out.println(barcos[i]);
+                return barcos[i];
             }
         }
         return null;
     }
 
     public boolean removeBarco(String nome) { // Remove um barco pelo nome
-        System.out.println("Digite o nome do barco para remove-lo");
-        nome = sc.nextLine();
         for (int i = 0; i < numBarcos; i++) {
             if (barcos[i].getNome().equals(nome)) {
                 for (int j = i; j < numBarcos - 1; j++) {

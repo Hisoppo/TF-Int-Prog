@@ -1,41 +1,35 @@
 import java.util.Scanner;
 
 public class Passeio {
-   Barco barco;
-   double valorBilhete;
-   Passageiro[] passageiros;
+   private Barco barco;
+   private double valorBilhete;
+   private Passageiro[] passageiros;
+   private int numPassageiros;
+   private Scanner sc = new Scanner(System.in);
 
    public Passeio(Barco barco, double valorBilhete) {
       this.barco = barco;
       this.valorBilhete = valorBilhete;
-      this.passageiros = null;
+      this.passageiros = new Passageiro[barco.getLotacao()];
+      this.numPassageiros = 0;
    }
 
-   Scanner sc = new Scanner(System.in);
+   public Barco getBarco() {
+      return barco;
+   }
 
-   public void criaPasseio(CadastroBarcos cadastroBarcos) {
-      System.out.println("Por gentileza, informe o nome do barco para o passeio:");
-      String nomeBarco = sc.nextLine();
-      for (Barco b : cadastroBarcos.barcos) {
-         if (b != null && nomeBarco.equals(b.getNome())) {
-            this.barco = b;
-            System.out.println("Barco localizado com sucesso: " + b.getNome());
-            System.out.println("Lotação do barco: " + b.getLotacao());
-            System.out.println("Digite o valor do bilhete:");
-            this.valorBilhete = sc.nextDouble();
-            sc.nextLine();
-            this.passageiros = new Passageiro[b.getLotacao()]; // Inicialize o array agora
-            System.out.println("Passeio criado com sucesso!");
-            return;
-         }
-      }
-      System.out.println("Barco não encontrado. Não foi possível criar o passeio.");
+   public double getValorBilhete() {
+      return valorBilhete;
+   }
+
+   public Passageiro[] getPassageiros() {
+      return passageiros;
    }
 
    public boolean adicionaPassageiro(CadastroBarcos cadastroBarcos) {
       System.out.println("Informe o nome do barco para o passeio:");
       String nomeBarco = sc.nextLine();
-      for (Barco b : cadastroBarcos.barcos) {
+      for (Barco b : cadastroBarcos.getBarcos()) {
          if (b != null && nomeBarco.equals(b.getNome())) {
             for (int i = 0; i < passageiros.length; i++) {
                if (passageiros[i] == null) {
@@ -48,6 +42,7 @@ public class Passeio {
                   String profissao = sc.nextLine();
                   passageiros[i] = new Passageiro(nomePassageiro, idade, profissao);
                   System.out.println("Passageiro adicionado com sucesso!");
+                  numPassageiros++;
                   return true;
                }
             }
@@ -60,9 +55,10 @@ public class Passeio {
    }
 
    public boolean removePassageiro(String nome) {
-      for (int i = 0; i < passageiros.length; i++) {
-         if (passageiros[i] != null && passageiros[i].getNome().equals(nome)) {
+      for (int i = 0; i < numPassageiros; i++) {
+         if (passageiros[i].getNome().equals(nome)) {
             passageiros[i] = null;
+            numPassageiros--;
             return true;
          }
       }
@@ -91,12 +87,7 @@ public class Passeio {
    }
 
    public double buscaValorPasseio() {
-      double total = 0;
-      for (Passageiro passageiro : passageiros) {
-         if (passageiro != null) {
-            total += valorBilhete;
-         }
-      }
-      return total;
+      return  numPassageiros * valorBilhete;
+      
    }
 }

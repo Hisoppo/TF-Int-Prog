@@ -5,7 +5,7 @@ public class Application {
    public static void main(String[] args) {
 
       CadastroBarcos cadastroBarcos = new CadastroBarcos();
-      ArrayList<Passeio> passeios = new ArrayList<>(); // Declara a lista de passeios
+      ArrayList<Passeio> passeios = new ArrayList<>(); 
       Scanner sc = new Scanner(System.in);
 
       int seletor = 0;
@@ -46,11 +46,7 @@ public class Application {
                cadastroBarcos.buscaBarcoNome(barcoPesquisar);
                break;
             case 5:
-               Passeio novoPasseio = new Passeio(null, 0);
-               novoPasseio.criaPasseio(cadastroBarcos);
-               if (novoPasseio.barco != null) {
-                  passeios.add(novoPasseio);
-               }
+               criaPasseio(cadastroBarcos, sc, passeios);
                break;
             case 6:
                if (passeios.isEmpty()) {
@@ -65,7 +61,7 @@ public class Application {
             case 7:
                System.out.println("Selecione o passeio para adicionar passageiro (número):");
                for (int i = 0; i < passeios.size(); i++) {
-                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).barco.getNome());
+                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).getBarco().getNome());
                }
                int passeioSelecionado = sc.nextInt() - 1;
                sc.nextLine();
@@ -81,7 +77,7 @@ public class Application {
             case 8:
                System.out.println("Selecione o passeio para remover passageiro (número):");
                for (int i = 0; i < passeios.size(); i++) {
-                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).barco.getNome());
+                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).getBarco().getNome());
                }
                passeioSelecionado = sc.nextInt() - 1;
                sc.nextLine();
@@ -101,7 +97,7 @@ public class Application {
             case 9:
                System.out.println("Selecione o passeio para buscar por profissão (número):");
                for (int i = 0; i < passeios.size(); i++) {
-                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).barco.getNome());
+                  System.out.println((i + 1) + " - Barco: " + passeios.get(i).getBarco().getNome());
                }
                passeioSelecionado = sc.nextInt() - 1;
                sc.nextLine();
@@ -129,5 +125,23 @@ public class Application {
                System.out.println("Opção inválida.");
          }
       }
+   }
+   public static void criaPasseio(CadastroBarcos cadastroBarcos, Scanner sc, ArrayList<Passeio> passeios) {
+      System.out.println("Por gentileza, informe o nome do barco para o passeio:");
+      String nomeBarco = sc.nextLine();
+      Barco b = cadastroBarcos.buscaBarcoNome(nomeBarco);
+      if (b != null) {
+         
+            System.out.println("Barco localizado com sucesso: " + b.getNome());
+            System.out.println("Lotação do barco: " + b.getLotacao());
+            System.out.println("Digite o valor do bilhete:");
+            double valorBilhete = sc.nextDouble();
+            sc.nextLine();
+            Passeio passeio = new Passeio(b, valorBilhete); 
+            passeios.add(passeio);
+            System.out.println("Passeio criado com sucesso!");
+            return;
+      }
+      System.out.println("Barco não encontrado. Não foi possível criar o passeio.");
    }
 }

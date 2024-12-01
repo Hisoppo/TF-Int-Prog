@@ -2,9 +2,9 @@
 // codigo (int), nome (String) e lotação (int). Crie os métodos de acesso para os atributos da classe. 
 
 public class Barco {
-    int codigo;
-    String nome;
-    int lotacao;
+    private int codigo;
+    private String nome;
+    private int lotacao;
 
     public Barco(int codigo, String nome, int lotacao) {
         this.codigo = codigo;
